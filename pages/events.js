@@ -1,4 +1,4 @@
-import EventsList from 
+import EventsList from ""
 
 export default function events() {
     return (
