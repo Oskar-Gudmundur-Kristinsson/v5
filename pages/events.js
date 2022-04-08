@@ -1,10 +1,22 @@
-import EventsList from ""
+import EventsList from "../components/EventList"
 
-export default function events() {
+export default function events({ events }) {
     return (
       <div>
-        <h1>hi</h1>
+        <EventsList events={events} />
       </div>
     )
 }
 
+export var getServerSideProps = async () => {
+  const url = new URL (process.env.URL + `/events`);
+  const res = await fetch(url.href)
+  const eventjson = await res.json()
+  const events = eventjson["items"]
+
+  return {
+    props: {
+      events,
+    },
+  }
+}
