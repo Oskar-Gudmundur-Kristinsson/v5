@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import eventStyles from '../styles/Event.module.css'
 
-const eventItem = ({ event }) => {
+const EventItem = ({ event }) => {
   return (
     <div>
       <Link href={`/event/${event.id}`}>
@@ -17,4 +17,4 @@ const eventItem = ({ event }) => {
   )
 }
 
-export default eventItem
+export default EventItem
